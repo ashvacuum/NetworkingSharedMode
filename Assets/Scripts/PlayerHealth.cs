@@ -9,10 +9,6 @@ public class PlayerHealth : NetworkBehaviour
 
     private const float MaxHealth = 200f;
     public event Action<float> OnDamageEvent;
-    private void Awake()
-    {
-        NetworkedHealth = MaxHealth;
-    }
 
     public override void Spawned()
     {
