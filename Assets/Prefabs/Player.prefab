@@ -224,6 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 10
   PlayerMovement: {fileID: 5724511627485295004}
+  delayTimeLeft: 0
 --- !u!114 &6411302053418406771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,7 +237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02428079c563124dbb210811cf5adcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _NetworkedHealth: 100
 --- !u!114 &5483224496801029378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 6612962961542842523}
+  HealthBarContainer: {fileID: 3000367189396505005}
 --- !u!1 &5137203261811014778
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class HeallhBarController : MonoBehaviour
 {
     public Image HealthBar;
+    public Canvas HealthBarContainer;
     private PlayerHealth Health;
 
     private void Awake()
@@ -17,6 +18,13 @@ public class HeallhBarController : MonoBehaviour
         {
             HealthBar.fillAmount = 1;
         }
+    }
+
+    private void LateUpdate()
+    {
+        if (HealthBarContainer)
+            HealthBarContainer.transform.LookAt(transform.position + Camera.main.transform.rotation * Vector3.forward,
+                Camera.main.transform.rotation * Vector3.up);
     }
 
     private void OnHealthBarDamaged(float percent)
@@ -32,11 +40,11 @@ public class HeallhBarController : MonoBehaviour
     private IEnumerator ShowHealthBar(float HideDelay)
     {
         var healthBarHideColor = HealthBar.color;
-        healthBarHideColor.a = 0;
+        healthBarHideColor.a = 1;
         HealthBar.color = healthBarHideColor;
         yield return new WaitForSeconds(HideDelay);
         var healthBarShowColor = HealthBar.color;
-        healthBarShowColor.a = 1;
+        healthBarShowColor.a = 0;
         HealthBar.color = healthBarShowColor;
     }
 }
