@@ -855,12 +855,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc8bbf345839b4b4087a91a07cc68b6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RegPass: {fileID: 980169960}
-  RegPassRepeat: {fileID: 679880414}
-  RegUser: {fileID: 305368544}
+  regPass: {fileID: 980169960}
+  regPassRepeat: {fileID: 679880414}
+  regUser: {fileID: 305368544}
   regBtn: {fileID: 512357804}
-  LogUser: {fileID: 0}
-  LogPass: {fileID: 0}
+  logUser: {fileID: 843727234}
+  logPass: {fileID: 1810667803}
   logBtn: {fileID: 0}
 --- !u!1 &777627271
 GameObject:
