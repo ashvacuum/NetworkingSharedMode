@@ -18,8 +18,8 @@ public class LoginAndRegistrationPanel : MonoBehaviour
     [FormerlySerializedAs("LogPass")] [SerializeField]private TMP_InputField logPass;
     [SerializeField] private Button logBtn;
 
-    private Dictionary<string, string> _userContent = new Dictionary<string, string>();s
-    private string UserKey = "USERS";
+    private Dictionary<string, string> _userContent = new Dictionary<string, string>();
+    private  const string USER_KEY = "USERS";
 
     private void Awake()
     {
@@ -27,20 +27,20 @@ public class LoginAndRegistrationPanel : MonoBehaviour
         logBtn.transform.parent.gameObject.SetActive(false);
         logBtn.onClick.AddListener(OnLoginPressed);
         regBtn.onClick.AddListener(OnRegisterPressed);
-        if (PlayerPrefs.HasKey(UserKey))
+        if (PlayerPrefs.HasKey(USER_KEY))
         {
-            _userContent = JsonConvert.DeserializeObject<Dictionary<string, string>>(PlayerPrefs.GetString(UserKey));
+            _userContent = JsonConvert.DeserializeObject<Dictionary<string, string>>(PlayerPrefs.GetString(USER_KEY));
         }
         else
         {
-            _userContent = JsonConvert.DeserializeObject<Dictionary<string, string>>(PlayerPrefs.GetString(UserKey));
+            _userContent = JsonConvert.DeserializeObject<Dictionary<string, string>>(PlayerPrefs.GetString(USER_KEY));
         }
         
     }
 
     private void OnDestroy()
     {
-        PlayerPrefs.SetString(UserKey, JsonConvert.SerializeObject(_userContent));
+        PlayerPrefs.SetString(USER_KEY, JsonConvert.SerializeObject(_userContent));
     }
 
     private void OnLoginPressed()
